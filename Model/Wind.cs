@@ -1,3 +1,6 @@
+using System;
+
+[Serializable]
 public class Wind
 {
     public float Speed { get; set; }

@@ -1,7 +1,10 @@
+using System;
+
+[Serializable]
 public class WeatherResponse
 {
     public Coord Coord { get; set; }
-    public Weather Weather { get; set; }
+    public Weather[] Weather { get; set; }
     public string Base { get; set; }
     public Main Main { get; set; }
     public int Visibility { get; set; }
@@ -13,4 +16,6 @@ public class WeatherResponse
     public int Id { get; set; }
     public string Name { get; set; }
     public int Cod { get; set; }
+
+    public string IconUrl => "http://openweathermap.org/img/w/" + Weather?[0].Icon+ ".png";
 }

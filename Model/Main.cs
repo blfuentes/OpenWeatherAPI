@@ -1,3 +1,6 @@
+using System;
+
+[Serializable]
 public class Main
 {
     public float Temp { get; set; }

@@ -1,3 +1,6 @@
+using System;
+
+[Serializable]
 public class Coord
 {
     public float Lon { get; set; }

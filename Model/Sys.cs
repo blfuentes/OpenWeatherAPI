@@ -1,3 +1,6 @@
+using System;
+
+[Serializable]
 public class Sys
 {
     public int Type { get; set; }
