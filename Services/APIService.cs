@@ -14,7 +14,7 @@ internal class APIService
         this._apiKey = apiKey;
     }
 
-    internal async Task<WeatherResponse> GetWeatherByCityName(string city)
+    internal async Task<WeatherResponse> GetWeatherByCityNameAsObject(string city)
     {
         WeatherResponse result = null;
         string apiQuery = $"/data/2.5/weather?q={city}&appid={_apiKey}";
@@ -27,4 +27,18 @@ internal class APIService
 
         return result;
     }
+
+    internal async Task<string> GetWeatherByCityNameAsJSon(string city)
+    {
+        string result = null;
+        string apiQuery = $"/data/2.5/weather?q={city}&appid={_apiKey}";
+
+        HttpResponseMessage response = await client.GetAsync(apiQuery);
+        if (response.IsSuccessStatusCode)
+        {
+            result = await response.Content.ReadAsStringAsync();
+        }
+
+        return result;
+    }    
 }

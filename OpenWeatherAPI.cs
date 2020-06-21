@@ -15,9 +15,14 @@ namespace OpenWeatherAPI
             this.APIService = new APIService(apiID);
         }
 
-        public async Task<WeatherResponse> GetWeatherByCityName(string city)
+        public async Task<WeatherResponse> GetWeatherByCityNameAsObject(string city)
         {
-            return await this.APIService.GetWeatherByCityName(city);
+            return await this.APIService.GetWeatherByCityNameAsObject(city);
+        }
+
+        public async Task<string> GetWeatherByCityNameAsJSon(string city)
+        {
+            return await this.APIService.GetWeatherByCityNameAsJSon(city);
         }
     }
 }
